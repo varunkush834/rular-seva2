@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rural Seva</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LANGUAGE -->
+<div class="screen active" id="language">
+  <h2>Select Language</h2>
+  <select>
+    <option>English</option>
+    <option>Hindi</option>
+    <option>Marathi</option>
+  </select>
+  <button onclick="showLogin()">Continue</button>
+<input id="phone" placeholder="+91XXXXXXXXXX">
+<div id="recaptcha-container"></div>
+<button onclick="sendOTP()">Send OTP</button>
+
+<input id="otp" placeholder="Enter OTP">
+<button onclick="verifyOTP()">Verify OTP</button>
+
+<!-- LOGIN -->
+<div class="screen" id="login">
+  <h2>Login</h2>
+  <input id="name" placeholder="Your Name">
+  <input id="phone" placeholder="Mobile Number">
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- HOME -->
+<div class="screen" id="home">
+
+<header class="top">
+  <h3>Hello, <span id="userName"></span> 👋</h3>
+  <p id="city">Detecting location...</p>
+</header>
+
+<div class="banner" id="banner"></div>
+
+<div class="services">
+  <div onclick="searchPlace('hospital')">🏥 Hospital</div>
+  <div onclick="searchPlace('pharmacy')">💊 Medical</div>
+  <div onclick="searchPlace('grocery')">🛒 Grocery</div>
+  <div onclick="searchPlace('hotel')">🏨 Hotel</div>
+</div>
+
+<button class="loc" onclick="getLocation()">📍 Use Current Location</button>
+
+<div id="map"></div>
+
+<div class="bottom-nav">
+  <button onclick="showHome()">🏠</button>
+  <button onclick="showChat()">💬</button>
+  <button onclick="showProfile()">👤</button>
+</div>
+
+</div>
+
+<!-- CHAT -->
+<div class="screen" id="chat">
+  <h2>Chat With Us</h2>
+  <textarea placeholder="Type message"></textarea>
+  <button>Send</button>
+</div>
+
+<!-- PROFILE -->
+<div class="screen" id="profile">
+  <h2>Profile</h2>
+  <p>Name: <span id="pName"></span></p>
+  <p>Phone: <span id="pPhone"></span></p>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<script src="app.js"></script>
+<script src="maps.js"></script>
+
+<!-- GOOGLE MAPS -->
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjyo31gIAmyR0nD4KPuErVsSIcBTf5_Us&libraries=places">
+</script>
+<script src="firebase-auth.js"></script>
+<script src="ai-chat.js"></script>
+<script src="helpdesk.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAIxPIcwezGuPHUjEGPvvfOSBBC7_AqOV0",
+    authDomain: "rular-seva1.firebaseapp.com",
+    projectId: "rular-seva1",
+    storageBucket: "rular-seva1.firebasestorage.app",
+    messagingSenderId: "702628851250",
+    appId: "1:702628851250:web:58bd17537e09230574962b"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+</body>
+</html>

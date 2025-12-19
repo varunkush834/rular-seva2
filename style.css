@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6f8;
+}
+
+.screen {
+  display: none;
+  padding: 20px;
+  height: 100vh;
+}
+
+.screen.active {
+  display: block;
+}
+
+input, select, textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 12px 25px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+.top-header {
+  background: linear-gradient(to right, #2e7d32, #66bb6a);
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.banner {
+  height: 150px;
+  border-radius: 15px;
+  margin: 15px 0;
+  background-size: cover;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.service {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.loc-btn {
+  width: 100%;
+  margin: 15px 0;
+}
+
+#map {
+  height: 300px;
+  border-radius: 15px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+}
